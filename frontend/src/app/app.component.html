@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+  <title>Redis Crud</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand title" href="#" style="color: rgba(0,0,0, 0.6);">
+      Redis Crud
+    </a>
+  </nav>
+  <div class="container-fluid">
+    <form name="form" [formGroup]="form" (ngSubmit)="addProduct()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <input type="text" name="productName" formControlName="productName" placeholder="Item name">
+        </div>
+      </div>
+      
+      <button class="btn button2 btn-primary" type="submit">Insert</button>
+    </form>
+
+    <div class="row">
+      <div class="col-sm-12 m-3" *ngFor="let product of products">
+        <div class="card">
+          <div class="card-body">
+            <input class="card-text" (change)="changed($event)" value="{{ product.name }}">
+            <button class="btn btn-primary button2" (click)="updateProduct(product)">Update</button>
+            <button class="btn btn-primary button2" (click)="deleteProduct(product.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

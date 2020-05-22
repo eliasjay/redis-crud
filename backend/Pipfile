@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+aniso8601 = "==8.0.0"
+click = "==7.1.2"
+itsdangerous = "==1.1.0"
+pytz = "==2020.1"
+redis = "==3.5.2"
+six = "==1.15.0"
+Flask = "==1.1.2"
+Flask-Cors = "==3.0.8"
+Flask-RESTful = "==0.3.8"
+Jinja2 = "==2.11.2"
+MarkupSafe = "==1.1.1"
+Werkzeug = "==1.0.1"
+
+[requires]
+python_version = "3.8"
